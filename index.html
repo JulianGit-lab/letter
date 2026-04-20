@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Mi Cielo 🩵</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #72b2ff, #8ec2f8);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: #fff;
+        }
+        .carta {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: auto;
+        }
+/* Botón de música */
+.music-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4b7bff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+    background-color: #1e38ff;
+}
+
+/* Botón de la carta (antes era 'button') */
+.carta button {
+    background-color: #4b7bff;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.carta button:hover {
+    background-color: #1e38ff;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Botón para reproducir/pausar la música -->
+    <button class="music-button" onclick="toggleMusic()" id="musicBtn">▶️</button>
+
+    <!-- Audio oculto -->
+    <audio id="miCancion" loop>
+        <source src="audio/Adolescent's Orquesta - Anhelo (Letra Oficial).mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <div class="carta">
+        <h1>Para Mi Cielito Hermosa 🩵</h1>
+        <p>
+            Desde que llegaste a mi vida, todo es más bonito. Gracias por cada sonrisa,
+            cada momento y cada sueño compartido. Este pequeño detalle es solo una
+            muestra de lo mucho que significas para mí
+        </p>
+        <button onclick="mostrarMensaje()">Haz clic para una sorpresa</button>
+        <p id="sorpresa" style="display:none; margin-top:20px;">
+            🩵 Te amo más de lo que las palabras pueden expresar 🩵<br>
+            Siento todo lo que ha pasado, siento que no te sientas amada, yo lo que siempre he quedido
+            es que te sientas especial, perdon si no sientes que me esfuerzo por ti amor, pero al contrario
+            siempre doy lo mejor de mi y si sientes que no es suficiente te lo demostraré aun más. <br>
+
+            <br>Con eso quiero demostrarte que pienso en ti en cada momento y que no necesito nada material para
+            darte un detalle bonito, lo que quiero es demostrarte lo mucho que me importas y quiero estar contigo, y fuera de que me sirve de practica para mi estudio xd
+            es una muestra de que quiero meterle ganas a mi estudio, y seas mi apoyo en este momento tan importante
+            de mi vida, ya que quiero que estes el resto de mi vida a mi lado, y quiero esforzarme con paciencia y disciplina
+            con la ingenieria para que no te sientas mal por mi trabajo actual y tener un mejor trabajo que tenga la
+            capacidad de darte todo lo que deseas <br>
+
+            <br>Enserio me importas demasiado, te amo demasiado, y quiero estar hasta viejitos contigo como me lo dijiste hoy xd
+            Me encantas mi amor 🩵 <br><br>
+
+            <img src="img/IMG_7113.jpg" alt="Nuestra foto" width="300">
+        </p>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById("sorpresa").style.display = "block";
+        }
+
+          function toggleMusic() {
+            const audio = document.getElementById("miCancion");
+            const button = document.getElementById("musicBtn");
+
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "⏸️";
+            } else {
+                audio.pause();
+                button.textContent = "▶️";
+            }
+        }
+    </script>
+</body>
+</html>
